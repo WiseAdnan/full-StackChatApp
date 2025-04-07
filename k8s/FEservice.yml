@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: chatapp
+  labels:
+    app: frontend
+spec:
+  selector:
+    app: frontend
+  type: ClusterIP
+
+  ports:
+    - name: chatapp
+      protocol: TCP
+      port: 80
+      targetPort: 80
